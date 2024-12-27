@@ -44,10 +44,17 @@
     "sara.perez": ["GeneticDiagnosis"],
     "sbarturen": ["Labvirushep"],
     "sergio.sanchez": ["LabFWDB_ssanchez"],
-    "sherrera": ["LabFWBD", "LabFWBD_ext"],
+    "sherrera": ["LabFWBD", "LabFWBD_ext", "Labtuberculosis"],
     "sresino": ["Labvirushep"],
     "svaldezate": ["Labtaxonomia"],
     "svazquez": ["Labvirusres"],
     "ycampos": ["LabUfiecMithocondrial"],
-    "anadonoso": ["Labenterovirus"]
+    "anadonoso": ["Labenterovirus"],
+    "mvmoneo": ["SpainUDP"],
+    "bbaladron": ["SpainUDP"],
+    "bioinfoadm": ["test"],
+    "s.varona": ["misc"],
+    "nlabiod": ["Labarbovirus"],
+    "jmgonzalez": ["Lablegionella"],
+    "alberto.campoy": ["Labvirusres"]
 }

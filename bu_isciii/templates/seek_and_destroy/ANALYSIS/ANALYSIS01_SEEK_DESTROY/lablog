@@ -7,7 +7,7 @@ ln -s ../samples_id.txt .
 echo "sample,fastq_1,fastq_2" > samplesheet.csv
 cat samples_id.txt | while read in; do echo "${in},00-reads/${in}_R1.fastq.gz,00-reads/${in}_R2.fastq.gz"; done >> samplesheet.csv
 
-scratch_dir=$(echo $(pwd) | sed "s/\/data\/bi\/scratch_tmp/\/scratch/g")
+scratch_dir=$(echo $(pwd) | sed "s/\/data\/ucct\/bi\/scratch_tmp/\/scratch/g")
 
 cat <<EOF > seek_destroy.sbatch
 #!/bin/sh
@@ -21,11 +21,11 @@ cat <<EOF > seek_destroy.sbatch
 
 export NXF_OPTS="-Xms500M -Xmx4G"
 
-nextflow run /scratch/bi/pipelines/Seek-Destroy/main.nf  \\
+nextflow run /data/ucct/bi/pipelines/seek-destroy-nf/seek-destroy-nf-1.0dev/main.nf  \\
           -c ../../DOC/seek_destroy.config \\
           --input samplesheet.csv \\
-	  --scout_database /data/bi/references/kraken/minikraken_8GB_20200312.tgz \\
-          --host_database  /data/bi/references/eukaria/homo_sapiens/hg38/UCSC/kraken2/kraken2_human.tar.gz \\
+	  --scout_database /data/ucct/bi/references/kraken/minikraken_8GB_20200312.tgz \\
+          --host_database  /data/ucct/bi/references/eukaria/homo_sapiens/hg38/UCSC/kraken2/kraken2_human.tar.gz \\
           --outdir seek_destroy_results \\
           -resume
 EOF
